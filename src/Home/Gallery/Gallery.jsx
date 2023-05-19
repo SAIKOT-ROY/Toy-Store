@@ -9,28 +9,28 @@ const Gallery = () => {
           <div className="w-3/4 p-4">
             <img
               className="rounded-full"
-              src="../../../public/11-pic/itachi.webp"
+              src="/asset/11-pic/itachi.webp"
               alt=""
             />
           </div>
           <div className="w-3/4">
             <img
               className="rounded-full"
-              src="../../../public/11-pic/gojo.jpg"
+              src="/asset/11-pic/gojo.jpg"
               alt=""
             />
           </div>
           <div className="w-3/4">
             <img
               className="rounded-full"
-              src="../../../public/11-pic/kakashi.webp"
+              src="/asset/11-pic/kakashi.webp"
               alt=""
             />
           </div>
           <div className="w-3/4">
             <img
               className="rounded-full"
-              src="../../../public/11-pic/megumi.jpg"
+              src="/asset/11-pic/megumi.jpg"
               alt=""
             />
           </div>
@@ -39,28 +39,28 @@ const Gallery = () => {
           <div className="w-3/4">
             <img
               className="rounded-full"
-              src="../../../public/11-pic/kamado.jpg"
+              src="/asset/11-pic/kamado.jpg"
               alt=""
             />
           </div>
           <div className="w-3/4 h-1/3">
             <img
               className="rounded-full"
-              src="../../../public/11-pic/sukuna.jpg"
+              src="/asset/11-pic/sukuna.jpg"
               alt=""
             />
           </div>
           <div className="w-3/4">
             <img
               className="rounded-full"
-              src="../../../public/11-pic/sasuke.webp"
+              src="/asset/11-pic/sasuke.webp"
               alt=""
             />
           </div>
           <div className="w-3/4">
             <img
               className="rounded-full"
-              src="../../../public/11-pic/bakugo.jpg"
+              src="/asset/11-pic/bakugo.jpg"
               alt=""
             />
           </div>
