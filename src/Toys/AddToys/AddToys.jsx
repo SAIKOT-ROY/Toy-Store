@@ -1,11 +1,17 @@
-import React from "react";
+import React, { useContext } from "react";
+import { AuthContext } from "../../Providers/AuthProviders";
 
 const AddToys = () => {
+
+  const {user} = useContext(AuthContext)
+
   const handleAddToys = (event) => {
     event.preventDefault();
     const form = event.target;
     const img = form.img.value;
     const name = form.name.value;
+    const email = form.email.value;
+    const seller = form.seller.value;
     const category = form.category.value;
     const price = form.price.value;
     const rating = form.rating.value;
@@ -18,6 +24,8 @@ const AddToys = () => {
         category,
         price,
         rating,
+        email,
+        seller,
         quantity,
         description
     }
@@ -33,7 +41,6 @@ const AddToys = () => {
     })
     .then(res => res.json())
     .then(data => console.log(data))
-
 
 
   };
@@ -72,7 +79,7 @@ const AddToys = () => {
               <input
                 type="text"
                 name="seller"
-                defaultValue={" "}
+                defaultValue={user?.displayName}
                 className="input input-bordered"
               />
             </div>
@@ -83,7 +90,7 @@ const AddToys = () => {
               <input
                 type="text"
                 name="email"
-                defaultValue={" "}
+                defaultValue={user?.email}
                 className="input input-bordered"
               />
             </div>

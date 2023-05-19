@@ -1,8 +1,29 @@
-import React from "react";
+import React, { useContext, useState } from "react";
 import { Link } from "react-router-dom";
-import Login from "../../LoginsLayout/Login/Login";
+import { AuthContext } from "../../Providers/AuthProviders";
+
 
 const Navbar = () => {
+
+  const [tool, setTool] = useState(false)
+  const {user, logOut} = useContext(AuthContext);
+
+  const toolOne = () => {
+    setTool(true)
+  }
+  const toolTwo = () => {
+    setTool(false)
+  }
+
+  const handleLogOut = () => {
+        logOut()
+        .then(() => {
+
+        })
+        .catch(error => console.log(error.message))
+  }
+
+
   return (
     <div>
       <div className="navbar bg-base-100">
@@ -47,10 +68,14 @@ const Navbar = () => {
               <Link to="/alltoys">All Toys</Link>
             </li>
             <li>
-              <Link to="/mytoys">My Toys</Link>
+              {
+                user? <Link to="/mytoys">My Toys</Link> : ''
+              }
             </li>
             <li>
-              <Link to="addtoys">Add a Toys</Link>
+              {
+                user? <Link to="addtoys">Add a Toys</Link> : ''
+              }
             </li>
             <li>
               <Link to="/blog">Blog</Link>
@@ -58,7 +83,24 @@ const Navbar = () => {
           </ul>
         </div>
         <div className="navbar-end">
-          <Link to="/login">Login</Link>
+          <div className="relative flex">
+          {
+            user? <>
+            <button onClick={handleLogOut}>Log Out</button>
+            <img onMouseOver={toolOne} onMouseOut={toolTwo}
+             className="rounded-full w-10 ml-3" src={user.photoURL} alt="" />
+            </>:
+            <>
+            <Link to="/login">Login</Link>
+            </>
+            
+          }
+          </div>
+          <div className="absolute ml-44 mb-12 font-bold text-sm">
+          <p>
+            {tool == true ? <span>{user?.displayName}</span> : ""}
+          </p>
+          </div>
         </div>
       </div>
     </div>
