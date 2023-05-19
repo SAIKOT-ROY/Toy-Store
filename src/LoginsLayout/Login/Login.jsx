@@ -1,19 +1,42 @@
-import React from "react";
+import React, { useContext } from "react";
 import { FcGoogle } from "react-icons/fc";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../../Providers/AuthProviders";
 
 const Login = () => {
+ 
+  const {logIn} = useContext(AuthContext)
+  
+  const handleSignIn = (event) => {
+        event.preventDefault();
+        const form = event.target;
+        const email = form.email.value;
+        const password = form.password.value;
+
+        console.log(email, password)
+        logIn(email, password)
+        .then(result => {
+          const loggedUser = result.user;
+          console.log(loggedUser)
+        })
+        .catch(error => console.log(error))
+
+  }
+
+
   return (
     <div className="hero min-h-screen bg-slate-800 mb-10">
       <div className="hero-content">
         <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-zinc-300">
           <div className="card-body">
+            <form onSubmit={handleSignIn}>
             <div className="form-control">
               <label className="label">
                 <span className="font-bold">Email</span>
               </label>
               <input
                 type="text"
+                name="email"
                 placeholder="email"
                 className="input input-bordered"
               />
@@ -24,6 +47,7 @@ const Login = () => {
               </label>
               <input
                 type="text"
+                name="password"
                 placeholder="password"
                 className="input input-bordered"
               />
@@ -46,6 +70,7 @@ const Login = () => {
                 <p>Google</p>
               </div>
             </div>
+            </form>
           </div>
         </div>
       </div>
