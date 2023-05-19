@@ -47,18 +47,18 @@ const Navbar = () => {
               <Link to="/alltoys">All Toys</Link>
             </li>
             <li>
-              <Link>My Toys</Link>
+              <Link to="/mytoys">My Toys</Link>
             </li>
             <li>
-              <Link>Add a Toys</Link>
+              <Link to="addtoys">Add a Toys</Link>
             </li>
             <li>
-              <Link>Blog</Link>
+              <Link to="/blog">Blog</Link>
             </li>
           </ul>
         </div>
         <div className="navbar-end">
-          <Link to='/login'>Login</Link>
+          <Link to="/login">Login</Link>
         </div>
       </div>
     </div>

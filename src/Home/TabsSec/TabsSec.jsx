@@ -1,25 +1,29 @@
 import React from "react";
 import { Tab, TabList, TabPanel, Tabs } from "react-tabs";
-import 'react-tabs/style/react-tabs.css';
+import "react-tabs/style/react-tabs.css";
+import AniToys from "./AniToys";
+import MarvelToys from "./MarvelToys";
+import DcToys from "./DcToys";
 
 const TabsSec = () => {
   return (
-    <div>
+    <div className="mb-10">
       <Tabs>
-        <TabList>
-          <Tab>Title 1</Tab>
-          <Tab>Title 2</Tab>
-          <Tab>Title 3</Tab>
-        </TabList>
-
+        <div className="text-center">
+          <TabList>
+            <Tab>Anime</Tab>
+            <Tab>Marvel</Tab>
+            <Tab>DC</Tab>
+          </TabList>
+        </div>
         <TabPanel>
-          <h2>Any content 1</h2>
+          <AniToys></AniToys>
         </TabPanel>
         <TabPanel>
-          <h2>Any content 2</h2>
+          <MarvelToys></MarvelToys>
         </TabPanel>
         <TabPanel>
-            <h2>Any Content 3</h2>
+          <DcToys></DcToys>
         </TabPanel>
       </Tabs>
     </div>
