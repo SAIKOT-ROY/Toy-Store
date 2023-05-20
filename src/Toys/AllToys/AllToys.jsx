@@ -12,19 +12,16 @@ const AllToys = () => {
 
   return (
     <div>
-      <div className="overflow-x-auto w-3/4 md:w-full">
+      <div className="overflow-x-auto w-3/4 md:w-full border">
         <table className="table w-3/4 md:w-full">
           {/* head */}
           <thead>
             <tr>
-              <th>
-                <label>
-                  <input type="checkbox" className="checkbox" />
-                </label>
-              </th>
-              <th>Name</th>
-              <th>Job</th>
-              <th>Favorite Color</th>
+              <th>Seller Name</th>
+              <th>Toys Name</th>
+              <th>Sub Category</th>
+              <th>Price</th>
+              <th>Available Quantity</th>
               <th></th>
             </tr>
           </thead>

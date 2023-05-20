@@ -1,7 +1,15 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { AuthContext } from "../../Providers/AuthProviders";
+import Select from 'react-select';
+
+const options = [
+  { value: 'Marvel', label: 'Marvel' },
+  { value: 'Anime', label: 'Anime' },
+  { value: 'DC', label: 'DC' },
+];
 
 const AddToys = () => {
+  const [selectedOption, setSelectedOption] = useState(null);
 
   const {user} = useContext(AuthContext)
 
@@ -27,12 +35,12 @@ const AddToys = () => {
         email,
         seller,
         quantity,
-        description
+        description,
     }
 
     console.log(toys);
 
-    fetch('http://localhost:5000/toys',{
+    fetch('http://localhost:5000/items',{
         method: 'POST',
         headers:{
                 'content-type': 'application/json'
@@ -46,7 +54,7 @@ const AddToys = () => {
   };
 
   return (
-    <div>
+    <div className="border border-black shadow-md bg-slate-200">
       <form onSubmit={handleAddToys}>
         <div className="card-body">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -98,12 +106,13 @@ const AddToys = () => {
               <label className="label">
                 <span className="label-text">Category</span>
               </label>
-              <input
-                type="text"
-                name="category"
-                defaultValue={" "}
-                className="input input-bordered"
-              />
+              <Select
+                  defaultValue={selectedOption}
+                  onChange={setSelectedOption}
+                  options={options}
+                  isMulti
+                  name="category"
+                />
             </div>
             <div className="form-control">
               <label className="label">
@@ -118,7 +127,7 @@ const AddToys = () => {
             </div>
             <div className="form-control">
               <label className="label">
-                <span className="label-text">rating</span>
+                <span className="label-text">Rating</span>
               </label>
               <input
                 type="text"
