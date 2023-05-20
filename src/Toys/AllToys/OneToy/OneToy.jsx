@@ -1,10 +1,13 @@
 import React from "react";
 import { useLoaderData } from "react-router-dom";
 
+
 const OneToy = () => {
   const singleToy = useLoaderData();
 
   const {img, seller, email, price, rating, quantity, description, name} = singleToy
+
+
 
   return (
     <div>
@@ -15,7 +18,7 @@ const OneToy = () => {
             src={img}
             className="max-w-sm rounded-lg shadow-2xl"
           />
-          <div className="w-1/2">
+          <div className="md:w-1/2 w-full">
             <h1 className="text-5xl font-bold">{name}</h1>
             <p className="py-6">{description}</p>
             <p><span className="font-bold">Quantity </span>: <span>{quantity}</span></p>

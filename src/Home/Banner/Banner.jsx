@@ -4,7 +4,7 @@ const Banner = () => {
   return (
     <div className="md:flex justify-center gap-5 mb-12">
       <div
-       className="w-3/4 md:w-2/4 p-5 shadow-md bg-slate-50 rounded-md mx-auto md:my-auto">
+       className="w-3/4 md:w-2/4 p-5 shadow-md bg-slate-50 rounded-md mx-auto mb-8 md:mb-0 md:my-auto">
         <h2 className="text-center mb-5 text-4xl font-bold">
           Anime Action Figures
         </h2>

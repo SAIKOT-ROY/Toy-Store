@@ -11,6 +11,7 @@ import MyToys from "../Toys/MyToys/MyToys";
 import Blogs from "../Blogs/Blogs";
 import UpdateToys from "../Toys/MyToys/UpdateToys";
 import OneToy from "../Toys/AllToys/OneToy/OneToy";
+import PrivateRoutes from "./PrivateRoutes";
 
 const router = createBrowserRouter([
   {
@@ -53,7 +54,7 @@ const router = createBrowserRouter([
       },
       {
         path: '/onetoy/:id',
-        element: <OneToy></OneToy>,
+        element: <PrivateRoutes><OneToy></OneToy></PrivateRoutes>,
         loader: ({params}) => fetch(`http://localhost:5000/item/${params.id}`)
       }
     ],

@@ -1,6 +1,8 @@
 import React, { useContext, useState } from "react";
 import { AuthContext } from "../../Providers/AuthProviders";
 import Select from 'react-select';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const options = [
   { value: 'Marvel', label: 'Marvel' },
@@ -12,6 +14,11 @@ const AddToys = () => {
   const [selectedOption, setSelectedOption] = useState(null);
 
   const {user} = useContext(AuthContext)
+
+  const toasty = () => {
+      toast('A new toy is added')
+  }
+
 
   const handleAddToys = (event) => {
     event.preventDefault();
@@ -56,10 +63,10 @@ const AddToys = () => {
   return (
     <div>
       <h3 className="font-bold text-4xl text-center mb-4 font-serif">Add a Toy here</h3>
-      <div className="border border-black shadow-md bg-slate-200">
+      <div className="border border-black shadow-md bg-slate-200 w-full w-4/5 mx-auto">
       <form onSubmit={handleAddToys}>
         <div className="card-body">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
             <div className="form-control">
               <label className="label">
                 <span className="label-text">Picture URL</span>
@@ -163,6 +170,7 @@ const AddToys = () => {
           </div>
           <div className="form-control mt-6">
             <input
+              onClick={toasty}
               className="btn bg-slate-500 btn-block"
               type="submit"
               value="Add Toy"
@@ -171,6 +179,7 @@ const AddToys = () => {
         </div>
       </form>
     </div>
+    <ToastContainer />
     </div>
   );
 };
