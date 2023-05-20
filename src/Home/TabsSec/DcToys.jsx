@@ -11,7 +11,7 @@ const DcToys = () => {
   }, []);
 
   return (
-    <div className="grid grid-cols-3">
+    <div className="grid md:grid-cols-3 gap-5 justify-center">
       {dcToys.slice(0, 3).map((dc) => (
         <ToyDc key={dc._id} dc={dc}></ToyDc>
       ))}

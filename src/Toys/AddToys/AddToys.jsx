@@ -54,7 +54,9 @@ const AddToys = () => {
   };
 
   return (
-    <div className="border border-black shadow-md bg-slate-200">
+    <div>
+      <h3 className="font-bold text-4xl text-center mb-4 font-serif">Add a Toy here</h3>
+      <div className="border border-black shadow-md bg-slate-200">
       <form onSubmit={handleAddToys}>
         <div className="card-body">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -161,13 +163,14 @@ const AddToys = () => {
           </div>
           <div className="form-control mt-6">
             <input
-              className="btn btn-primary btn-block"
+              className="btn bg-slate-500 btn-block"
               type="submit"
               value="Add Toy"
             />
           </div>
         </div>
       </form>
+    </div>
     </div>
   );
 };

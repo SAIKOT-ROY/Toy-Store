@@ -11,7 +11,7 @@ const MarvelToys = () => {
   }, []);
 
   return (
-    <div className="grid grid-cols-3">
+    <div className="grid md:grid-cols-3 gap-5 justify-center">
       {marvelToys.slice(0, 3).map((marToys) => (
         <ToyMar key={marToys._id} marToys={marToys}></ToyMar>
       ))}

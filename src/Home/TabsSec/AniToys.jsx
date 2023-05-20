@@ -12,7 +12,7 @@ const AniToys = () => {
   }, []);
 
   return (
-    <div className="grid grid-cols-3">
+    <div className="grid md:grid-cols-3 gap-5 justify-center">
        {
         aniToys.slice(0, 3).map(aToys => <ToyAni key={aToys._id} aToys={aToys}></ToyAni>)
        }

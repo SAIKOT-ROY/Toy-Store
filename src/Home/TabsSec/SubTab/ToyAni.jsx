@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const ToyAni = ({aToys}) => {
     return (
@@ -7,15 +8,20 @@ const ToyAni = ({aToys}) => {
             <img
               src={aToys?.img}
               alt="Shoes"
-              className="rounded-xl"
+              className="rounded-xl h-[300px]"
             />
           </figure>
           <div className="card-body items-center text-center">
             <h2 className="card-title">{aToys?.name}</h2>
-            <p>Price <span>{aToys?.price}</span></p>
+            <p>Price $<span>{aToys?.price}</span></p>
             <p>Rating <span>{aToys?.rating}</span></p>
             <div className="card-actions">
-              <button className="btn btn-primary">View Details</button>
+            <Link
+            className="btn font-bold bg-blue-900"
+            to={`/onetoy/${aToys._id}`}
+          >
+            View Details
+          </Link>
             </div>
           </div>
         </div>

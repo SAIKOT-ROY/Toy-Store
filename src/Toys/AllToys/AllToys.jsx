@@ -11,9 +11,9 @@ const AllToys = () => {
   }, []);
 
   return (
-    <div>
-      <div className="overflow-x-auto w-3/4 md:w-full border">
-        <table className="table w-3/4 md:w-full">
+    <div className="mb-10">
+      <div className="overflow-hidden md:overflow-x-auto w-full md:w-full">
+        <table className="md:table table-compact table-zebra border mx-auto w-3/4 md:w-full">
           {/* head */}
           <thead>
             <tr>

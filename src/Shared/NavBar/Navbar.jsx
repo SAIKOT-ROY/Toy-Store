@@ -2,31 +2,26 @@ import React, { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../Providers/AuthProviders";
 
-
 const Navbar = () => {
-
-  const [tool, setTool] = useState(false)
-  const {user, logOut} = useContext(AuthContext);
+  const [tool, setTool] = useState(false);
+  const { user, logOut } = useContext(AuthContext);
 
   const toolOne = () => {
-    setTool(true)
-  }
+    setTool(true);
+  };
   const toolTwo = () => {
-    setTool(false)
-  }
+    setTool(false);
+  };
 
   const handleLogOut = () => {
-        logOut()
-        .then(() => {
-
-        })
-        .catch(error => console.log(error.message))
-  }
-
+    logOut()
+      .then(() => {})
+      .catch((error) => console.log(error.message));
+  };
 
   return (
-    <div className="mb-10">
-      <div className="navbar bg-base-100">
+    <div className="mb-10 mt-5">
+      <div className="navbar rounded-lg bg-base-100 border">
         <div className="navbar-start">
           <div className="dropdown">
             <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -50,14 +45,26 @@ const Navbar = () => {
               className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52"
             >
               <li>
-                <a>Item 1</a>
+                <Link to="/">Home</Link>
               </li>
               <li>
-                <a>Item 3</a>
+                <Link to="/alltoys">All Toys</Link>
+              </li>
+              <li>{user ? <Link to="/mytoys">My Toys</Link> : ""}</li>
+              <li>{user ? <Link to="addtoys">Add a Toys</Link> : ""}</li>
+              <li>
+                <Link to="/blog">Blog</Link>
               </li>
             </ul>
           </div>
-          <a className="btn btn-ghost normal-case text-xl">AniToys</a>
+          <div className="flex justify-center items-center">
+            <img
+              className="w-28 rounded-full"
+              src="https://i.ibb.co/z2wND4Z/goku.jpg"
+              alt=""
+            />
+            <a className="btn btn-ghost normal-case text-xl">AniToys</a>
+          </div>
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1">
@@ -67,16 +74,8 @@ const Navbar = () => {
             <li>
               <Link to="/alltoys">All Toys</Link>
             </li>
-            <li>
-              {
-                user? <Link to="/mytoys">My Toys</Link> : ''
-              }
-            </li>
-            <li>
-              {
-                user? <Link to="addtoys">Add a Toys</Link> : ''
-              }
-            </li>
+            <li>{user ? <Link to="/mytoys">My Toys</Link> : ""}</li>
+            <li>{user ? <Link to="addtoys">Add a Toys</Link> : ""}</li>
             <li>
               <Link to="/blog">Blog</Link>
             </li>
@@ -84,22 +83,25 @@ const Navbar = () => {
         </div>
         <div className="navbar-end">
           <div className="relative flex">
-          {
-            user? <>
-            <button onClick={handleLogOut}>Log Out</button>
-            <img onMouseOver={toolOne} onMouseOut={toolTwo}
-             className="rounded-full w-10 ml-3" src={user.photoURL} alt="" />
-            </>:
-            <>
-            <Link to="/login">Login</Link>
-            </>
-            
-          }
+            {user ? (
+              <>
+                <button onClick={handleLogOut}>Log Out</button>
+                <img
+                  onMouseOver={toolOne}
+                  onMouseOut={toolTwo}
+                  className="rounded-full w-10 ml-3"
+                  src={user.photoURL}
+                  alt=""
+                />
+              </>
+            ) : (
+              <>
+                <Link to="/login">Login</Link>
+              </>
+            )}
           </div>
           <div className="absolute ml-44 mb-12 font-bold text-sm">
-          <p>
-            {tool == true ? <span>{user?.displayName}</span> : ""}
-          </p>
+            <p>{tool == true ? <span>{user?.displayName}</span> : ""}</p>
           </div>
         </div>
       </div>

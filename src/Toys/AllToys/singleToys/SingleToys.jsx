@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const SingleToys = ({ toys }) => {
   return (
@@ -18,7 +19,9 @@ const SingleToys = ({ toys }) => {
       <td>{toys.price}</td>
       <td>{toys.quantity}</td>
       <th>
-        <button className="btn btn-ghost btn-xs">details</button>
+        <Link
+         className="btn btn-ghost text-sky-700 font-bold btn-xs"
+         to={`/onetoy/${toys._id}`}>View Details</Link>
       </th>
     </tr>
   );
