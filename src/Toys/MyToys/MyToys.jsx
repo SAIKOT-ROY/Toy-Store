@@ -13,7 +13,9 @@ const MyToys = () => {
     fetch(`http://localhost:5000/items?email=${user?.email}`)
       .then((res) => res.json())
       .then((data) => setMyToys(data));
-  }, [myToys, user]);
+  }, [user?.email]);
+
+  console.log(myToys);
 
   const handleDelete = (id) => {  
     swal("Are you sure you want to do this?", {
@@ -32,18 +34,7 @@ const MyToys = () => {
       
   };
 
-  const handleUpdate = (id) => {
-        fetch(`http://localhost:5000/items/${id}`,{
-          method: 'PATCH',
-          headers: {
-                'content-type' : 'application/json'
-          },
-          body: JSON.stringify({status : 'confirm'})
-
-        })
-        .then(res => res.json())
-        .then(data => console.log(data))
-  }
+  
 
 
   return (
@@ -67,7 +58,6 @@ const MyToys = () => {
               key={myToy._id}
               myToy={myToy}
               handleDelete={handleDelete}
-              handleUpdate={handleUpdate}
             ></MyToy>
           ))}
         </tbody>

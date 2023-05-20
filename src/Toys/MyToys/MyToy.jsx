@@ -1,31 +1,32 @@
 import React from "react";
-import MyModal from "./MyModal";
+import { Link } from "react-router-dom";
 
-const MyToy = ({ myToy, handleDelete, handleUpdate }) => {
+
+const MyToy = ({ myToy, handleDelete }) => {
+
+  const {seller, name, category, price, quantity, _id} = myToy
+
   return (
     <tr>
       <td>
         <div className="flex items-center space-x-3">
           <div>
-            <div className="font-bold">{myToy?.seller}</div>
+            <div className="font-bold">{seller}</div>
           </div>
         </div>
       </td>
       <td>
-        <div className="font-medium">{myToy?.name}</div>
+        <div className="font-medium">{name}</div>
       </td>
-      <td>{myToy?.category}</td>
-      <td>{myToy?.price}</td>
-      <td>{myToy?.quantity}</td>
+      <td>{category}</td>
+      <td>{price}</td>
+      <td>{quantity}</td>
       <th>
-        <div>
-          <MyModal
-          myToy={myToy}
-          handleUpdate={handleUpdate}
-          ></MyModal>
+        <div className="border w-20 text-center rounded bg-gray-600 text-white font-extrabold p-1">
+        <Link to={`/mytoys/${_id}`}>Update</Link>
         </div>
         <div className="border w-20 text-center rounded bg-gray-600 text-white font-extrabold p-1">
-          <button onClick={() => handleDelete(myToy._id)} className="">
+          <button onClick={() => handleDelete(_id)} className="">
             Delete
           </button>
         </div>
