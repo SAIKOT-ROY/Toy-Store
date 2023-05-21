@@ -6,7 +6,9 @@ const AllToys = () => {
   const [alltoys, setAllToys] = useState([]);
   const [searchText, setSearchText] = useState([]);
 
-  useTitle('Ani Toy | All Toys')
+
+
+  useTitle("Ani Toy | All Toys");
 
   useEffect(() => {
     fetch("https://assignment-xi-server.vercel.app/items")
@@ -14,17 +16,18 @@ const AllToys = () => {
       .then((data) => setAllToys(data));
   }, []);
 
-
   const handleSearch = () => {
-        fetch(`https://assignment-xi-server.vercel.app/toysSearch/${searchText}`)
-        .then(res => res.json())
-        .then(data => setAllToys(data))
-  }
+    fetch(`https://assignment-xi-server.vercel.app/toysSearch/${searchText}`)
+      .then((res) => res.json())
+      .then((data) => setAllToys(data));
+  };
 
   return (
     <div className="mb-10">
       <div className="mx-auto w-1/4 mb-10">
-        <h3 className="text-center font-extrabold text-3xl mb-3">Search Here</h3>
+        <h3 className="text-center font-extrabold text-3xl mb-3">
+          Search Here
+        </h3>
         <div className="form-control ml-5">
           <div className="input-group">
             <input
@@ -66,13 +69,16 @@ const AllToys = () => {
             </tr>
           </thead>
           <tbody>
-            {/* row 1 */}
-            {alltoys.slice(0, 20).map((toys) => (
+          {alltoys.slice(0, 20).map((toys) => (
               <SingleToys key={toys._id} toys={toys}></SingleToys>
-            ))}
+            ))} 
           </tbody>
         </table>
       </div>
+      <p
+       className="text-sm rounded-lg mx-auto mt-5 border text-white w-20 text-center p-2 bg-blue-600 font-bold">
+        See All
+      </p>
     </div>
   );
 };

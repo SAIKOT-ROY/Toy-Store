@@ -1,15 +1,17 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../Providers/AuthProviders";
 import useTitle from "../../Hook/useTitle";
 
 
 const SignUp = () => {
+   const {erros, setErrors} = useState('')
 
    const {newUser} = useContext(AuthContext)
-   console.log(newUser);
 
    useTitle('Ani Toys | Sign Up')
+
+
 
   const handleLogin = (event) => {
     event.preventDefault();
@@ -19,13 +21,18 @@ const SignUp = () => {
     const email = form.email.value;
     const password = form.password.value;
 
-    console.log(photo, name, email, password);
+   
     newUser(email, password)
     .then(result => {
         const createdUser = result.user;
         console.log(createdUser);
     })
-    .catch(error => console.log(error))
+    .catch(error =>{
+      const errorMessage = error.message
+      console.log(errorMessage)
+      setErrors(errorMessage)
+    }
+      )
   };
 
   return (
@@ -91,6 +98,7 @@ const SignUp = () => {
                 <button className="btn bg-[#0B2447] mb-4">Login</button>
               </div>
             </form>
+            <p>{erros}</p>
           </div>
         </div>
       </div>

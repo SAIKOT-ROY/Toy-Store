@@ -1,5 +1,5 @@
 import React, { useContext, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../../Providers/AuthProviders";
 
 const Navbar = () => {
@@ -45,15 +45,15 @@ const Navbar = () => {
               className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52"
             >
               <li>
-                <Link to="/">Home</Link>
+                <NavLink className={({ isActive,  }) =>isActive ? "text-blue-400" : "" } to="/">Home</NavLink>
               </li>
               <li>
-                <Link to="/alltoys">All Toys</Link>
+                <NavLink className={({ isActive,  }) =>isActive ? "text-blue-400" : "" } to="/alltoys">All Toys</NavLink>
               </li>
-              <li>{user ? <Link to="/mytoys">My Toys</Link> : ""}</li>
-              <li>{user ? <Link to="addtoys">Add a Toys</Link> : ""}</li>
+              <li>{user ? <NavLink className={({ isActive,  }) =>isActive ? "text-blue-400" : "" } to="/mytoys">My Toys</NavLink> : ""}</li>
+              <li>{user ? <NavLink to="addtoys">Add a Toys</NavLink> : ""}</li>
               <li>
-                <Link to="/blog">Blog</Link>
+                <NavLink className={({ isActive,  }) =>isActive ? "text-blue-400" : "" } to="/blog">Blog</NavLink>
               </li>
             </ul>
           </div>
@@ -69,15 +69,15 @@ const Navbar = () => {
         <div className="navbar-center hidden lg:flex font-semibold font-serif">
           <ul className="menu menu-horizontal px-1">
             <li>
-              <Link to="/">Home</Link>
+              <NavLink className={({ isActive,  }) =>isActive ? "text-blue-400" : "" } to="/">Home</NavLink>
             </li>
             <li>
-              <Link to="/alltoys">All Toys</Link>
+              <NavLink className={({ isActive,  }) =>isActive ? "text-blue-400" : "" } to="/alltoys">All Toys</NavLink>
             </li>
-            <li>{user ? <Link to="/mytoys">My Toys</Link> : ""}</li>
-            <li>{user ? <Link to="addtoys">Add a Toys</Link> : ""}</li>
+            <li>{user ? <NavLink className={({ isActive,  }) =>isActive ? "text-blue-400" : "" } to="/mytoys">My Toys</NavLink> : ""}</li>
+            <li>{user ? <NavLink className={({ isActive,  }) =>isActive ? "text-blue-400" : "" } to="addtoys">Add a Toys</NavLink> : ""}</li>
             <li>
-              <Link to="/blog">Blog</Link>
+              <NavLink className={({ isActive,  }) =>isActive ? "text-blue-400" : "" } to="/blog">Blog</NavLink>
             </li>
           </ul>
         </div>
@@ -100,8 +100,8 @@ const Navbar = () => {
               </>
             )}
           </div>
-          <div className="absolute ml-44 mb-12 font-bold text-sm bg-slate-200">
-            <p>{tool == true ? <span className="p-2 rounded-lg text-slate-900">{user?.displayName}</span> : ""}</p>
+          <div className="absolute md:ml-44 mt-16 md:mb-20 font-bold text-sm bg-slate-200">
+            <p>{tool == true ? <span className="p-2 rounded-lg text-slate-900 shadow border bg-slate-300">{user?.displayName}</span> : ""}</p>
           </div>
         </div>
       </div>
