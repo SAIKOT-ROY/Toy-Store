@@ -4,7 +4,7 @@ const Blogs = () => {
   return (
     <div>
       <h2 className="text-4xl font-bold text-center mb-8">Blog Page</h2>
-      <div className="grid grid-cols-2 gap-5">
+      <div className="grid md:grid-cols-2 gap-5 w-4/5 mx-auto mb-7">
         <div className="">          
           <p className="w-3/4 mb-2">
             <span>1 .</span> What is an access token and refresh token? How do they work and
