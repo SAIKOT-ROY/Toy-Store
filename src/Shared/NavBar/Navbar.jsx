@@ -100,7 +100,7 @@ const Navbar = () => {
               </>
             )}
           </div>
-          <div className="absolute md:ml-44 mt-16 md:mb-20 font-bold text-sm bg-slate-200">
+          <div className="absolute md:ml-44 mt-16 md:mb-32 font-bold text-sm bg-slate-200">
             <p>{tool == true ? <span className="p-2 rounded-lg text-slate-900 shadow border bg-slate-300">{user?.displayName}</span> : ""}</p>
           </div>
         </div>
