@@ -21,7 +21,7 @@ const Navbar = () => {
 
   return (
     <div className="mb-10 mt-5">
-      <div className="navbar rounded-lg bg-base-100 border">
+      <div className="navbar rounded-lg bg-base-100 border-sky-950 bg-zinc-50">
         <div className="navbar-start">
           <div className="dropdown">
             <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -63,10 +63,10 @@ const Navbar = () => {
               src="https://i.ibb.co/z2wND4Z/goku.jpg"
               alt=""
             />
-            <a className="btn btn-ghost normal-case text-xl">AniToys</a>
+            <a className="btn btn-ghost normal-case text-2xl font-serif font-bold">Ani Toys</a>
           </div>
         </div>
-        <div className="navbar-center hidden lg:flex">
+        <div className="navbar-center hidden lg:flex font-semibold font-serif">
           <ul className="menu menu-horizontal px-1">
             <li>
               <Link to="/">Home</Link>
@@ -82,7 +82,7 @@ const Navbar = () => {
           </ul>
         </div>
         <div className="navbar-end">
-          <div className="relative flex">
+          <div className="relative flex flex-col-reverse md:flex-row font-bold font-serif mr-4">
             {user ? (
               <>
                 <button onClick={handleLogOut}>Log Out</button>

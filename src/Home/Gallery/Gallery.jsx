@@ -3,7 +3,7 @@ import React from "react";
 const Gallery = () => {
   return (
     <div className="mb-20 rounded-lg">
-        <h2 className="font-bold text-center text-5xl">Top Products</h2>
+        <h2 className="font-bold text-center text-5xl font-serif">Top Products</h2>
       <div className="mx-auto bg-[#0B2447] mt-10 p-10 rounded-lg">
         <div className="mb-10 md:flex-row gap-10 md:gap-8 flex flex-col justify-center items-center">
           <div className="w-3/4 p-4">
