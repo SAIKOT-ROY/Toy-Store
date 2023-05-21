@@ -5,7 +5,7 @@ const Footer = () => {
     <div>
       <footer className="footer p-10 bg-[#19376D] text-neutral-content">
         <div>
-          <img className="w-20 rounded-full" src="/asset/navlogo/goku.jpg" alt="" />
+          <img className="w-20 rounded-full" src="https://i.ibb.co/z2wND4Z/goku.jpg" alt="" />
           <p className="font-serif font-bold text-3xl">Ani Toys</p>
         </div>
         <div>
