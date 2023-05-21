@@ -9,28 +9,28 @@ const Gallery = () => {
           <div className="w-3/4 p-4">
             <img
               className="rounded-full"
-              src="/asset/11-pic/itachi.webp"
+              src="https://i.ibb.co/VYkxXNL/itachi.webp"
               alt=""
             />
           </div>
           <div className="w-3/4">
             <img
               className="rounded-full"
-              src="/asset/11-pic/gojo.jpg"
+              src="https://i.ibb.co/9mxRpCj/gojo.jpg"
               alt=""
             />
           </div>
           <div className="w-3/4">
             <img
               className="rounded-full"
-              src="/asset/11-pic/kakashi.webp"
+              src="https://i.ibb.co/27vft35/kakashi.webp"
               alt=""
             />
           </div>
           <div className="w-3/4">
             <img
               className="rounded-full"
-              src="/asset/11-pic/megumi.jpg"
+              src="https://i.ibb.co/LnCj3HV/megumi.jpg"
               alt=""
             />
           </div>
@@ -39,28 +39,28 @@ const Gallery = () => {
           <div className="w-3/4">
             <img
               className="rounded-full"
-              src="/asset/11-pic/kamado.jpg"
+              src="https://i.ibb.co/y6kkx9Z/kamado.jpg"
               alt=""
             />
           </div>
           <div className="w-3/4 h-1/3">
             <img
               className="rounded-full"
-              src="/asset/11-pic/sukuna.jpg"
+              src="https://i.ibb.co/CJpm5RB/sukuna.jpg"
               alt=""
             />
           </div>
           <div className="w-3/4">
             <img
               className="rounded-full"
-              src="/asset/11-pic/sasuke.webp"
+              src="https://i.ibb.co/ZHx2cRG/sasuke.webp"
               alt=""
             />
           </div>
           <div className="w-3/4">
             <img
               className="rounded-full"
-              src="/asset/11-pic/bakugo.jpg"
+              src="https://i.ibb.co/qDTRWtw/bakugo.jpg"
               alt=""
             />
           </div>
