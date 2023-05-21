@@ -42,7 +42,7 @@ const MyToys = () => {
         <button className="border p-4 bg-slate-300 rounded btn-ghost">Ascending</button>
         <button className="border p-4 bg-black text-white rounded">Descending</button>
       </div>
-      <div className="overflow-hidden md:overflow-x-auto w-full md:w-full border">
+      <div className="overflow-hidden md:overflow-x-auto w-full border">
         <table className="md:table table-compact table-zebra border mx-auto w-3/4 md:w-full">
           {/* head */}
           <thead>

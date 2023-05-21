@@ -1,7 +1,16 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const ToyAni = ({aToys}) => {
+
+
+  const toasty = () => {
+    toast('Please Login')
+  }
+
+
     return (
         <div  className="card w-96 bg-base-100 shadow-xl" data-aos="flip-down">
           <figure className="px-10 pt-10">
@@ -18,6 +27,7 @@ const ToyAni = ({aToys}) => {
             <p>Rating <span>{aToys?.rating}</span></p>
             <div className="card-actions">
             <Link
+            onClick={toasty}
             className="btn font-bold bg-blue-900"
             to={`/onetoy/${aToys._id}`}
           >
@@ -25,6 +35,7 @@ const ToyAni = ({aToys}) => {
           </Link>
             </div>
           </div>
+          <ToastContainer />
         </div>
     );
 };
