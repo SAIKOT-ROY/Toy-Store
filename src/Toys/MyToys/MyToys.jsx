@@ -3,9 +3,13 @@ import MyToy from "./MyToy";
 import { AuthContext } from "../../Providers/AuthProviders";
 import swal from "sweetalert";
 
+
 const MyToys = () => {
   const [myToys, setMyToys] = useState([]);
   const { user } = useContext(AuthContext);
+
+
+
 
   // url = `http://localhost:5000/items?email=${user?.email}`
 
@@ -15,9 +19,8 @@ const MyToys = () => {
       .then((data) => setMyToys(data));
   }, [user?.email]);
 
-  console.log(myToys);
 
-  const handleDelete = (id) => {  
+  const handleDelete = (id) => {
     swal("Are you sure you want to do this?", {
       buttons: ["NO", true],
     });
@@ -26,42 +29,43 @@ const MyToys = () => {
     })
       .then((res) => res.json())
       .then((data) => {
-        if (data.deletedCount > 0)
-         alert("user removed");
+        if (data.deletedCount > 0) alert("user removed");
         const remaining = myToys.filter((t) => t._id !== id);
         setMyToys(remaining);
       });
-      
   };
 
-  
-
-
   return (
-    <div className="overflow-hidden md:overflow-x-auto w-full md:w-full border">
-      <table className="md:table table-compact table-zebra border mx-auto w-3/4 md:w-full">
-        {/* head */}
-        <thead>
-          <tr>
-            <th>Seller Name</th>
-            <th>Toys Name</th>
-            <th>Sub Category</th>
-            <th>Price</th>
-            <th>Available Quantity</th>
-            <th></th>
-          </tr>
-        </thead>
-        <tbody>
-          {/* row 1 */}
-          {myToys.map((myToy) => (
-            <MyToy
-              key={myToy._id}
-              myToy={myToy}
-              handleDelete={handleDelete}
-            ></MyToy>
-          ))}
-        </tbody>
-      </table>
+    <div className="mb-10">
+      <div className="flex justify-center mb-8">
+        <button className="border p-4 bg-slate-300 rounded btn-ghost">Ascending</button>
+        <button className="border p-4 bg-black text-white rounded">Descending</button>
+      </div>
+      <div className="overflow-hidden md:overflow-x-auto w-full md:w-full border">
+        <table className="md:table table-compact table-zebra border mx-auto w-3/4 md:w-full">
+          {/* head */}
+          <thead>
+            <tr>
+              <th>Seller Name</th>
+              <th>Toys Name</th>
+              <th>Sub Category</th>
+              <th>Price</th>
+              <th>Available Quantity</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+            {/* row 1 */}
+            {myToys.map((myToy) => (
+              <MyToy
+                key={myToy._id}
+                myToy={myToy}
+                handleDelete={handleDelete}
+              ></MyToy>
+            ))}
+          </tbody>
+        </table>
+      </div>
     </div>
   );
 };

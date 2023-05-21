@@ -6,7 +6,7 @@ const Features = () => {
       <h2 className="font-bold text-4xl text-center mb-5 font-serif">Our features</h2>
       <div className="grid md:grid-cols-4 gap-4 w-4/5 mx-auto border justify-center rounded-md shadow-lg p-10 bg-slate-200">
         <div className="border bg-sky-900 shadow-xl p-3 rounded-lg">
-          <div className="md:ml-4 ml-10 pt-4">
+          <div className="md:ml-4 ml-10 pt-4" data-aos="fade-right">
             <img
               className="w-40 border rounded-lg"
               src="https://i.ibb.co/KqqLs9V/design-logo.jpg"
@@ -21,7 +21,7 @@ const Features = () => {
           </div>
         </div>
         <div className="border bg-sky-900 shadow-xl p-3 rounded-lg">
-          <div className="md:ml-4 ml-10 pt-4">
+          <div className="md:ml-4 ml-10 pt-4" data-aos="fade-right">
             <img
               className="w-40 border rounded-lg"
               src="https://i.ibb.co/rGxTyV7/cargo-ship-icon-meticulously-designed-cargo.jpg"
@@ -37,7 +37,7 @@ const Features = () => {
           </div>
         </div>
         <div className="border bg-sky-900 shadow-xl p-3 rounded-lg">
-          <div className="md:ml-4 ml-10 pt-4">
+          <div className="md:ml-4 ml-10 pt-4" data-aos="fade-left">
             <img
               className="w-40 border rounded-lg"
               src="https://i.ibb.co/B62C5J1/premium.jpg"
@@ -50,7 +50,7 @@ const Features = () => {
           </div>
         </div>
         <div className="border bg-sky-900 shadow-xl p-3 rounded-lg">
-          <div className="md:ml-4 ml-10 pt-4">
+          <div className="md:ml-4 ml-10 pt-4" data-aos="fade-left">
             <img
               className="w-40 border rounded-lg"
               src="https://i.ibb.co/q7JypRc/delivary.jpg"

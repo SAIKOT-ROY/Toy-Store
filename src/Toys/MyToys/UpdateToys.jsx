@@ -6,7 +6,7 @@ import 'react-toastify/dist/ReactToastify.css';
 const UpdateToys = () => {
   const toys = useLoaderData();
 
-  const { price, description, quantity, _id } = toys;
+  const { price, description, quantity, _id } = toys || {}
 
   const toasty = () => {
     toast('A new toy is updated')

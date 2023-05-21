@@ -18,7 +18,7 @@ const ToyDc = ({ dc }) => {
         <div className="card-actions">
         <Link
             className="btn font-bold bg-blue-900"
-            to={`/onetoy/${dc._id}`}
+            to={`/onetoy/${dc?._id}`}
           >
             View Details
           </Link>

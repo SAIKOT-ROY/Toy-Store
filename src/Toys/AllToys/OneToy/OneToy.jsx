@@ -5,13 +5,13 @@ import { useLoaderData } from "react-router-dom";
 const OneToy = () => {
   const singleToy = useLoaderData();
 
-  const {img, seller, email, price, rating, quantity, description, name} = singleToy
+  const {img, seller, email, price, rating, quantity, description, name} = singleToy || {}
 
 
 
   return (
-    <div>
-        <h2 className="font-bold text-4xl text-center mb-6">Single Toy Information</h2>
+    <div className="mb-20">
+        <h2 className="font-bold text-4xl text-center mb-10 font-serif">Single Toy Information</h2>
       <div className="hero min-h-screen bg-base-200">
         <div className="hero-content flex-col lg:flex-row gap-8">
           <img
