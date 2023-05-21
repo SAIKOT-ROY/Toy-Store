@@ -26,7 +26,7 @@ const UpdateToys = () => {
 
           console.log(updatedToys);
 
-    fetch(`http://localhost:5000/items/${_id}`,{
+    fetch(`https://assignment-xi-server.vercel.app/items/${_id}`,{
         method: 'PATCH',
         headers: {
             'content-type' : 'application/json'
@@ -81,7 +81,7 @@ const UpdateToys = () => {
             onClick={toasty}
             className="btn bg-gray-700 btn-block"
             type="submit"
-            value="Add Toy"
+            value="Update"
           />
         </div>
       </div>

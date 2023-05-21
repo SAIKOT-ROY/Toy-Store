@@ -50,12 +50,12 @@ const router = createBrowserRouter([
       {
         path: '/mytoys/:id',
         element: <PrivateRoutes><UpdateToys></UpdateToys></PrivateRoutes>,
-        loader:({params}) => fetch(`http://localhost:5000/item/${params.id}`)
+        loader:({params}) => fetch(`https://assignment-xi-server.vercel.app/item/${params.id}`)
       },
       {
         path: '/onetoy/:id',
         element: <PrivateRoutes><OneToy></OneToy></PrivateRoutes>,
-        loader: ({params}) => fetch(`http://localhost:5000/item/${params.id}`)
+        loader: ({params}) => fetch(`https://assignment-xi-server.vercel.app/item/${params.id}`)
       }
     ],
   },

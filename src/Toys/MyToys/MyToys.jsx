@@ -12,10 +12,10 @@ const MyToys = () => {
   useTitle('Ani Toy | My Toys')
 
 
-  // url = `http://localhost:5000/items?email=${user?.email}`
+  // url = `https://assignment-xi-server.vercel.app/items?email=${user?.email}`
 
   useEffect(() => {
-    fetch(`http://localhost:5000/items?email=${user?.email}`)
+    fetch(`https://assignment-xi-server.vercel.app/items?email=${user?.email}`)
       .then((res) => res.json())
       .then((data) => setMyToys(data));
   }, [user?.email]);
@@ -25,7 +25,7 @@ const MyToys = () => {
     swal("Are you sure you want to do this?", {
       buttons: ["NO", true],
     });
-    fetch(`http://localhost:5000/items/${id}`, {
+    fetch(`https://assignment-xi-server.vercel.app/items/${id}`, {
       method: "DELETE",
     })
       .then((res) => res.json())
@@ -52,6 +52,7 @@ const MyToys = () => {
               <th>Sub Category</th>
               <th>Price</th>
               <th>Available Quantity</th>
+              <th>Description</th>
               <th></th>
             </tr>
           </thead>

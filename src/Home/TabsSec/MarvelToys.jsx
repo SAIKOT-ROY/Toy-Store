@@ -5,7 +5,7 @@ const MarvelToys = () => {
   const [marvelToys, setMarvelToys] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:5000/marvel")
+    fetch("https://assignment-xi-server.vercel.app/marvel")
       .then((res) => res.json())
       .then((data) => setMarvelToys(data));
   }, []);

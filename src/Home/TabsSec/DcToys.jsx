@@ -5,7 +5,7 @@ const DcToys = () => {
   const [dcToys, setDcToys] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:5000/dc")
+    fetch("https://assignment-xi-server.vercel.app/dc")
       .then((res) => res.json())
       .then((data) => setDcToys(data));
   }, []);

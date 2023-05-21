@@ -50,7 +50,7 @@ const AddToys = () => {
 
     console.log(toys);
 
-    fetch('http://localhost:5000/items',{
+    fetch('https://assignment-xi-server.vercel.app/items',{
         method: 'POST',
         headers:{
                 'content-type': 'application/json'
@@ -90,6 +90,7 @@ const AddToys = () => {
                 defaultValue={" "}
                 name="name"
                 className="input input-bordered"
+                required
               />
             </div>
             <div className="form-control">
@@ -101,6 +102,7 @@ const AddToys = () => {
                 name="seller"
                 defaultValue={user?.displayName}
                 className="input input-bordered"
+                required
               />
             </div>
             <div className="form-control">
@@ -112,6 +114,7 @@ const AddToys = () => {
                 name="email"
                 defaultValue={user?.email}
                 className="input input-bordered"
+                required
               />
             </div>
             <div className="form-control">
@@ -135,6 +138,7 @@ const AddToys = () => {
                 name="price"
                 defaultValue={" "}
                 className="input input-bordered"
+                required
               />
             </div>
             <div className="form-control">
@@ -157,6 +161,7 @@ const AddToys = () => {
                 name="quantity"
                 defaultValue={" "}
                 className="input input-bordered"
+                required
               />
             </div>
             <div className="form-control">
@@ -168,6 +173,7 @@ const AddToys = () => {
                 name="description"
                 defaultValue={" "}
                 className="input input-bordered"
+                required
               />
             </div>
           </div>

@@ -25,7 +25,7 @@ const Banner = () => {
         </p>
       </div>
       <div>
-        <img src="/asset/11-pic/banner/gojo-banner.jpg" alt="" />
+        <img src="https://i.ibb.co/kcqwWsf/gojo-banner.jpg" alt="" />
       </div>
     </div>
   );

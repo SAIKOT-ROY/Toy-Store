@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 const MyToy = ({ myToy, handleDelete }) => {
 
-  const {seller, name, category, price, quantity, _id} = myToy
+  const {seller, name, category, price, quantity, _id, description} = myToy || {}
 
   return (
     <tr>
@@ -21,6 +21,7 @@ const MyToy = ({ myToy, handleDelete }) => {
       <td>{category}</td>
       <td>{price}</td>
       <td>{quantity}</td>
+      <td>{description}</td>
       <th>
         <div className="border w-20 text-center rounded bg-gray-600 text-white font-extrabold p-1">
         <Link to={`/mytoys/${_id}`}>Update</Link>

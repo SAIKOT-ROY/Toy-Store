@@ -9,14 +9,14 @@ const AllToys = () => {
   useTitle('Ani Toy | All Toys')
 
   useEffect(() => {
-    fetch("http://localhost:5000/items")
+    fetch("https://assignment-xi-server.vercel.app/items")
       .then((res) => res.json())
       .then((data) => setAllToys(data));
   }, []);
 
 
   const handleSearch = () => {
-        fetch(`http://localhost:5000/toysSearch/${searchText}`)
+        fetch(`https://assignment-xi-server.vercel.app/toysSearch/${searchText}`)
         .then(res => res.json())
         .then(data => setAllToys(data))
   }

@@ -1,12 +1,15 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { FcGoogle } from "react-icons/fc";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../Providers/AuthProviders";
 import useTitle from "../../Hook/useTitle";
 
+
 const Login = () => {
  
   const {logIn, googleLogin} = useContext(AuthContext)
+  const [error, setError] = useState(" ")
+  const [success, setSuccess] = useState(" ")
   const location = useLocation();
   const navigate = useNavigate();
 
@@ -22,13 +25,18 @@ const Login = () => {
         const password = form.password.value;
 
         console.log(email, password)
+        setError(" ")
         logIn(email, password)
         .then(result => {
           const loggedUser = result.user;
+          setSuccess("Login successful")
           console.log(loggedUser)
           navigate(from, {replace: true})
         })
-        .catch(error => console.log(error))
+        .catch(error => {
+          console.log(error.message)
+          setError('Wrong id and password')        
+        })
 
   }
 
@@ -90,6 +98,8 @@ const Login = () => {
               </div>
             </div>
             </form>
+            <p className="text-red-600">{error}</p>
+            <p className="text-green-600">{success}</p>
           </div>
         </div>
       </div>

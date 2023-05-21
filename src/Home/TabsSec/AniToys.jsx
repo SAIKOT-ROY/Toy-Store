@@ -6,7 +6,7 @@ const AniToys = () => {
   const [aniToys, setAniToys] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:5000/anime")
+    fetch("https://assignment-xi-server.vercel.app/anime")
       .then((res) => res.json())
       .then((data) => setAniToys(data));
   }, []);
