@@ -2,14 +2,14 @@ import React from "react";
 
 const Banner = () => {
   return (
-    <div className="md:flex justify-center gap-5 mb-20 md:mb-52">
+    <div className="md:flex items-center justify-center gap-5 mb-20 md:mb-52 border bg-slate-300 p-12 rounded">
       <div
        data-aos="flip-right"
        className="w-3/4 md:w-2/4 p-5 shadow-md bg-slate-50 rounded-md mx-auto mb-8 md:mb-0 md:my-auto">
         <h2 className="text-center mb-5 text-4xl font-bold">
           Anime Action Figures
         </h2>
-        <p className="text-lg font-extralight text-stone-950 w-2/3 mx-auto">
+        <p className="text-lg font-light text-stone-950 w-2/3 mx-auto font-serif">
           Welcome to our action figures website, where imagination comes to
           life! Explore a captivating collection of action figures that will
           transport you to a world of adventure and excitement. With meticulous

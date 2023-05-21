@@ -8,13 +8,13 @@ const Blogs = () => {
   return (
     <div>
       <h2 className="text-4xl font-bold text-center mb-8">Blog Page</h2>
-      <div className="grid md:grid-cols-2 gap-5 w-4/5 mx-auto mb-7">
+      <div className="grid md:grid-cols-2 gap-5 w-4/5 mx-auto mb-7 border bg-slate-200 p-7 rounded-lg shadow">
         <div className="">          
-          <p className="w-3/4 mb-2">
+          <p className="w-3/4 mb-2 font-bold font-serif">
             <span>1 .</span> What is an access token and refresh token? How do they work and
             where should we store them on the client-side?
           </p>
-          <p>
+          <p className="font-semibold">
             An access token is a short-lived credential used for authentication,
             while a refresh token is a longer-lived credential used to obtain
             new access tokens without re-authenticating. Store the access token
@@ -24,8 +24,8 @@ const Blogs = () => {
           </p>
         </div>
         <div>        
-          <p className="w-3/4 mb-2"> <span>2 .</span> Compare SQL and NoSQL databases?</p>
-          <p>
+          <p className="w-3/4 mb-2 font-bold font-serif"> <span>2 .</span> Compare SQL and NoSQL databases?</p>
+          <p className="font-semibold">
             SQL databases use structured schemas and fixed relationships, scale
             vertically, enforce strong consistency, and use SQL as the query
             language. NoSQL databases offer flexible data models, scale
@@ -34,12 +34,12 @@ const Blogs = () => {
           </p>
         </div>
         <div> 
-          <p className="w-3/4 mb-2"><span>3 .</span> What is express js? What is Nest JS ?</p>
+          <p className="w-3/4 mb-2 font-bold font-serif"><span>3 .</span> What is express js? What is Nest JS ?</p>
           <p>
             Express.js is a lightweight and flexible web application framework
             for Node.js, used for building web applications and APIs.
           </p>
-          <p>
+          <p className="font-semibold">
             Nest.js is a scalable and opinionated Node.js framework built on top
             of Express.js, incorporating TypeScript, decorators, and
             architectural patterns to create maintainable and modular
@@ -47,8 +47,8 @@ const Blogs = () => {
           </p>
         </div>
         <div>
-          <p className="w-3/4 mb-2"><span>4 .</span> What is MongoDB aggregate and how does it work ?</p>
-          <p>
+          <p className="w-3/4 mb-2 font-bold font-serif"><span>4 .</span> What is MongoDB aggregate and how does it work ?</p>
+          <p className="font-semibold">
             In MongoDB, the aggregate function performs advanced data
             aggregation by applying a sequence of stages to the data. Each stage
             represents an operation or transformation, and the output of one
