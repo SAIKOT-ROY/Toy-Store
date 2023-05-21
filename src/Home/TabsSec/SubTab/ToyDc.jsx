@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 const ToyDc = ({ dc }) => {
   return (
-    <div className="card w-96 bg-base-100 shadow-xl">
+    <div className="card w-96 bg-base-100 shadow-xl" data-aos="flip-down">
       <figure className="px-10 pt-10">
         <img src={dc?.img} alt="Shoes" className="rounded-xl h-[300px]" />
       </figure>

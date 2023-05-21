@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import { FcGoogle } from "react-icons/fc";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../Providers/AuthProviders";
+import useTitle from "../../Hook/useTitle";
 
 const Login = () => {
  
@@ -10,6 +11,8 @@ const Login = () => {
   const navigate = useNavigate();
 
   const from = location.state?.from?.pathname || "/";
+
+  useTitle('Ani toys | Login')
 
   
   const handleSignIn = (event) => {
@@ -32,7 +35,9 @@ const Login = () => {
   const handleGoogleLogin = () => {
     googleLogin()
     .then(result => {
-        console.log(result.user)
+        const user = result.user
+        navigate(location.state?.from?.pathname)
+        console.log(user)
     })
     .catch(error => console.log(error.message))
   }

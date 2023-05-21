@@ -3,6 +3,7 @@ import { AuthContext } from "../../Providers/AuthProviders";
 import Select from 'react-select';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import useTitle from "../../Hook/useTitle";
 
 const options = [
   { value: 'Marvel', label: 'Marvel' },
@@ -12,6 +13,8 @@ const options = [
 
 const AddToys = () => {
   const [selectedOption, setSelectedOption] = useState(null);
+
+  useTitle('Ani Toy | Add Toys')
 
   const {user} = useContext(AuthContext)
 

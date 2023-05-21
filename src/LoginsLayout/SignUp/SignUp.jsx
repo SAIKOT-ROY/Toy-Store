@@ -1,12 +1,15 @@
 import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../Providers/AuthProviders";
+import useTitle from "../../Hook/useTitle";
 
 
 const SignUp = () => {
 
    const {newUser} = useContext(AuthContext)
    console.log(newUser);
+
+   useTitle('Ani Toys | Sign Up')
 
   const handleLogin = (event) => {
     event.preventDefault();

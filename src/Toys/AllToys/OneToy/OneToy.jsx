@@ -1,5 +1,6 @@
 import React from "react";
 import { useLoaderData } from "react-router-dom";
+import useTitle from "../../../Hook/useTitle";
 
 
 const OneToy = () => {
@@ -7,11 +8,11 @@ const OneToy = () => {
 
   const {img, seller, email, price, rating, quantity, description, name} = singleToy || {}
 
-
+  useTitle('Ani Toy | Toy Info')
 
   return (
     <div className="mb-20">
-        <h2 className="font-bold text-4xl text-center mb-10 font-serif">Single Toy Information</h2>
+        <h2 className="font-bold text-4xl text-center mb-10 font-serif">Toy Information</h2>
       <div className="hero min-h-screen bg-base-200">
         <div className="hero-content flex-col lg:flex-row gap-8">
           <img

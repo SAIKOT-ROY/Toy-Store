@@ -1,12 +1,15 @@
 import { useLoaderData } from "react-router-dom";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import useTitle from "../../Hook/useTitle";
 
 
 const UpdateToys = () => {
   const toys = useLoaderData();
 
   const { price, description, quantity, _id } = toys || {}
+
+  useTitle('Ani Toys | Update Toys')
 
   const toasty = () => {
     toast('A new toy is updated')
