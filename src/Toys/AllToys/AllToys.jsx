@@ -5,7 +5,11 @@ import useTitle from "../../Hook/useTitle";
 const AllToys = () => {
   const [alltoys, setAllToys] = useState([]);
   const [searchText, setSearchText] = useState([]);
+  const [allData, setAllData] = useState(false);
 
+  const handleAllData = () => {
+        setAllData(true)
+  }
 
 
   useTitle("Ani Toy | All Toys");
@@ -24,7 +28,7 @@ const AllToys = () => {
 
   return (
     <div className="mb-10">
-      <div className="mx-auto w-1/4 mb-10">
+      <div className="md:mx-auto ml-20 md:w-1/4 mb-10">
         <h3 className="text-center font-extrabold text-3xl mb-3">
           Search Here
         </h3>
@@ -55,7 +59,7 @@ const AllToys = () => {
           </div>
         </div>
       </div>
-      <div className="overflow-hidden md:overflow-x-auto w-full md:w-full">
+      <div className="overflow-hidden md:overflow-x-auto w-full">
         <table className="md:table table-compact table-zebra border mx-auto w-3/4 md:w-full">
           {/* head */}
           <thead>
@@ -69,15 +73,19 @@ const AllToys = () => {
             </tr>
           </thead>
           <tbody>
-          {alltoys.slice(0, 20).map((toys) => (
-              <SingleToys key={toys._id} toys={toys}></SingleToys>
-            ))} 
+            {allData == true ? alltoys.slice(0, 20).map((toys) => (
+              <SingleToys key={toys._id} toys={toys}></SingleToys> 
+            )) : alltoys.map((toys) => (
+              <SingleToys key={toys._id} toys={toys}></SingleToys> 
+            )) } 
           </tbody>
         </table>
       </div>
       <p
-       className="text-sm rounded-lg mx-auto mt-5 border text-white w-20 text-center p-2 bg-blue-600 font-bold">
-        See All
+       onClick={handleAllData}
+       className="btn text-sm rounded-lg 
+       mx-auto mt-5 border text-white w-20 text-center p-2 bg-blue-600 font-bold">
+        see all
       </p>
     </div>
   );
