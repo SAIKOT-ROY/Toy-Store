@@ -17,7 +17,7 @@ const Stat = () => {
           <div className="stat-desc">↗︎ 400 (22%)</div>
         </div>
 
-        <div className="stat">
+        <div className="stat bg-slate-400">
           <div className="stat-title">Reviews</div>
           <div className="stat-value">1,200</div>
           <div className="stat-desc">↘︎ 90 (14%)</div>

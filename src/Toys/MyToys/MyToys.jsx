@@ -11,13 +11,14 @@ const MyToys = () => {
 
   useTitle("Ani Toy | My Toys");
 
-  const url = `http://localhost:5000/items?email=${user.email}&sort=${asc ? 'asc' : 'desc'}`;
+  // const url = `http://localhost:5000/items?email=${user.email}&sort=${asc ? 'asc' : 'desc'}`;
+  const url = `https://assignment-xi-server.vercel.app/items?&sort=${asc ? 'asc' : 'desc'}&&email=${user.email}`;
 
   useEffect(() => {
     fetch(url)
       .then((res) => res.json())
       .then((data) => setMyToys(data));
-  }, [user?.email]);
+  }, [user?.email, asc]);
 
   const handleDelete = (id) => {
     swal("Are you sure you want to do this?", {
@@ -38,8 +39,8 @@ const MyToys = () => {
     <div className="mb-10">
       <div className="flex justify-center mb-8">
         <button
-          onClick={() => setAsc(false)}
-          className="border btn font-bold font-serif p-4 bg-slate-300 rounded btn-ghost"
+          onClick={() => setAsc(!asc)}
+          className="border btn font-bold font-serif p-4 bg-slate-800 text-gray-200 rounded"
         >
           {asc ? "High to Low" : "Low to High"}
         </button>

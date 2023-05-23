@@ -61,7 +61,6 @@ const AllToys = () => {
       </div>
       <div className="overflow-hidden md:overflow-x-auto w-full">
         <table className="md:table table-compact table-zebra border mx-auto w-3/4 md:w-full">
-          {/* head */}
           <thead>
             <tr>
               <th>Seller Name</th>
